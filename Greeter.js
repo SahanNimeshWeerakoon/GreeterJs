@@ -1,6 +1,6 @@
-(function(window, $) {
+(function(global, $) {
     let Greeter = function(firstName, lastName, language) {
-        // return new Greeter.init(firstName, lastName, language);
+        return new Greeter.init(firstName, lastName, language);
     }
 
     // This is where we put the methods we need to use inside the Greeter object
@@ -17,4 +17,7 @@
     // Greeter.init.prototype is returned on Greeter initialization. 
     // Make the Greeter objects's methods available in Greeter initialization ( init method proto == making main obj proto)
     Greeter.init.prototype = Greeter.prototype;
-}('window', '$'))
+
+    // Make G$ (like '$' in jquery) available in global method
+    global.Greeter = global.G$ = Greeter;
+}(window, $))
