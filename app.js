@@ -1,2 +1,2 @@
 let g = G$('Sahan', 'Weerakoon');
-console.log(g);
+g.greet().setLang('es').greet(true);
