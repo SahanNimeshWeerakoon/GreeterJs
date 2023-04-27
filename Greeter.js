@@ -22,6 +22,12 @@
 
     // This is where we put the methods we need to use inside the Greeter object
     Greeter.prototype = {
+        HTMLGreeting: function(selector, formal) {
+            if(!$) throw 'Jquery not loaded';
+            if(!selector) throw 'Missing Jquery selector';
+            $(selector).html(this.greet(formal));
+            return this;
+        },
         fullName: function() {
             return `${this.firstName} ${this.lastName}`;
         },
